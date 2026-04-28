@@ -1,35 +1,26 @@
 <script setup>
-// Replace these with your actual image imports
-// import chartImg from '../assets/images/portfolio-chart.png'
-// import statsImg from '../assets/images/stats-graphic.png'
-
-// Using placeholder URLs for demo — swap with your real imports
 const chartImg = 'https://placehold.co/420x420/e2f5ea/16a34a?text=Portfolio+Chart'
 const statsImg = 'https://placehold.co/420x300/e2f5ea/16a34a?text=Stats+Graphic'
 
 const stats = [
   { value: '40+', label: 'PLANS\nREVIEWED' },
-  { value: '0',   label: 'INFLATED\nPROJECTIONS' },
+  { value: '0', label: 'INFLATED\nPROJECTIONS' },
 ]
 </script>
 
 <template>
-    <section class="flex items-center justify-center mt-32">
-
-  <div class="bg-primary-100 m-5 p-8 md:p-16 lg:p-22 md:rounded-xl">
-
-    <div class="md:p-8 lg:p-10">
-      <div class="flex flex-col lg:flex-row md:items-center md:gap-12 lg:gap-16">
-
-        <!-- Left: text -->
-        <div class="md:flex-1 text-center md:text-left">
-          <h2 class="font-black text-black text-display-md mb-4">
+  <section class="flex items-center justify-center mt-32">
+   
+    <div class="bg-primary-100 pt-[60px] px-10 sm:px-20  md:p-16 lg:py-18 lg:px-10  md:rounded-xl">
+      <div class="flex flex-col  md:items-center lg:flex-row lg:justify-center md:gap-12 lg:gap-40 xl:max-w-[1040px]">
+        <div class="md:flex-1 text-center lg:text-left">
+          <h2 class=" text-black text-heading-lg lg:text-display-md xl:text-[40px] mb-2 lg:mb-4">
             Build stability<br class="hidden" /> as you grow
           </h2>
-          <p class="text-primary-700 font-bold text-heading-lg md:max-w-lg mb-5">
+          <p class="text-primary-600 font-bold text-body-lg lg:text-heading-md xl:text-heading-lg md:max-w-lg mb-6">
             Assuming you're 30. Roughly 30% of your money should be in something stable.
           </p>
-          <p class="text-black text-body-lg max-w-lg mx-auto md:mx-0">
+          <p class=" text-black text-body-md !font-normal lg:text-body-lg  mx-auto md:mx-0">
             You're probably heavy on equity. Mutual funds, stocks, maybe some crypto. That's fine for growth.
             But your portfolio needs a stable base too. A general rule: invest a percentage equal to your age
             in low-risk instruments. Guaranteed Savings Plans fit that slot perfectly. Not instead of your SIPs.
@@ -38,68 +29,59 @@ const stats = [
         </div>
 
         <!-- Right: chart image -->
-        <div class="mt-8 md:mt-0 flex justify-center md:justify-end md:flex-shrink-0">
-          <img
-            :src="chartImg"
-            alt="Portfolio allocation chart"
-            class="w-56 h-56 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain rounded-xl"
-          />
+        <div class="mt-9 md:mt-0 flex justify-center md:justify-end md:flex-shrink-0">
+          <div
+            class="w-[200px] h-[200px] sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full  bg-gradient-primary opacity-75 flex items-center justify-center">
+          </div>
         </div>
 
       </div>
-    </div>
 
-    <!-- ─────────────────────────────────────────────
-         SECTION 2 — Handpicked, not hard sold
-    ───────────────────────────────────────────── -->
-    <div class="rounded-xl  md:p-8 lg:p-10">
-      <div class="flex flex-col lg:flex-row md:items-start md:gap-12 lg:gap-16">
+      <div class="rounded-xl lg:mt-[120px] lg:max-w-[1040px]">
+        <div class="flex flex-col flex-col-reverse  lg:flex-row md:items-start  lg:justify-between md:gap-12 lg:gap-16 ">
 
-        <!-- Left: "Only 4" card + stats grid -->
-        <div class="flex flex-col items-center lg:items-start gap-4 md:flex-shrink-0 md:w-80 lg:w-[380px] mx-auto">
+          <!-- Left: "Only 4" card + stats grid -->
+          <div class="flex flex-col items-center gap-4 md:flex-shrink-0 md:w-80 lg:w-[380px] mx-auto">
 
-          <!-- "Only 4 made the cut" tile -->
-          <div class="w-full bg-gradient-primary rounded-xl overflow-hidden text-center text-white">
-            <div class="px-6 pt-7 pb-6">
-              <p class="text-body-lg font-bold tracking-[0.2em] uppercase text-green-200 mb-1">Only</p>
-              <p class="text-display-md font-black leading-none">4</p>
-              <p class="text-body-lg font-bold tracking-[0.2em] uppercase text-green-200 mt-2">Made the cut</p>
+            <!-- "Only 4 made the cut" tile -->
+            <div class="lg:w-[220px] bg-gradient-primary rounded-xl overflow-hidden text-center text-white">
+              <div class="px-4 py-2 lg:py-3">
+                <p class="text-body-lg lg:text-label-md font-semibold uppercase text-green-200 ">Only</p>
+                <p class="text-heading-lg lg:text-[44px] my-1">4</p>
+                <p class="text-body-lg  lg:text-label-md font-semibold uppercase text-green-200 ">Made the cut</p>
+              </div>
             </div>
+
+            <!-- Stats: 40+ and 0 -->
+            <div class="w-full grid grid-cols-2 gap-4">
+              <div v-for="stat in stats" :key="stat.value" class="bg-white rounded-xl py-6 px-4 text-center lg:w-[180px]">
+                <p class="font-black  text-heading-lg lg:text-[32px] lg:mb-1 font-bold">{{ stat.value }}</p>
+                <span class="font-black text-body-md  lg:text-label-md !font-semibold">{{ stat.label }}</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Stats: 40+ and 0 -->
-          <div class="w-full grid grid-cols-2 gap-3">
-            <div
-              v-for="stat in stats"
-              :key="stat.value"
-              class="bg-white rounded-xl p-4 text-center shadow-sm"
-            >
-              <p class="font-black text-body-md ">{{ stat.value }}</p>
-              <span class="text-gray-400 text-[10px] md:text-[16px] font-bold">{{ stat.label }}</span>
-            </div>
+          <!-- Right: text + image -->
+          <div class="mt-20 lg:mt-0  md:px-0 lg:min-w-[560px] text-center lg:text-left">
+            <h2 class="text-black text-black text-heading-lg lg:text-display-md xl:text-[40px] mb-2 lg:mb-4">
+              Handpicked,<br class="hidden" /> not hard sold
+            </h2>
+            <p class="text-primary-600 font-bold text-body-lg lg:text-heading-md xl:text-heading-lg lg:max-w-lg mb-6">
+              We know Guaranteed Savings Plans get mis-sold. That's exactly why we built this.
+            </p>
+            <p class="text-gray-700 text-sm md:text-base lg:text-body-lg md:max-w-2xl mx-auto md:mx-0 mb-6">
+              Insurance agents routinely push Guaranteed Savings Plans with inflated return projections and buried
+              lock-ins. We've seen it for years. Every plan here was reviewed by our team for real, post-tax returns,
+              no IRR manipulation, no plans designed for the distributor's benefit over yours. That's the Beshak
+              standard.
+            </p>
           </div>
 
         </div>
-
-        <!-- Right: text + image -->
-        <div class="mt-8 md:mt-0 flex-1 text-center md:text-left">
-          <h2 class="font-black text-gray-900 text-display-md mb-4">
-            Handpicked,<br class="hidden" /> not hard sold
-          </h2>
-          <p class="text-primary-700 font-bold text-display-sm lg:max-w-lg mb-5">
-            We know Guaranteed Savings Plans get mis-sold. That's exactly why we built this.
-          </p>
-          <p class="text-gray-700 text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0 mb-6">
-            Insurance agents routinely push Guaranteed Savings Plans with inflated return projections and buried
-            lock-ins. We've seen it for years. Every plan here was reviewed by our team for real, post-tax returns,
-            no IRR manipulation, no plans designed for the distributor's benefit over yours. That's the Beshak standard.
-          </p>
-        </div>
-
       </div>
-    </div>
 
-  </div>
-    </section>
+    </div>
+  </section>
 
 </template>

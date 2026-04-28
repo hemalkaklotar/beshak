@@ -65,10 +65,25 @@ export default {
           'var(--text-heading-md)',
           { lineHeight: 'var(--leading-heading-md)', fontWeight: '500' }
         ],
-
+        'body-lg': [
+          'var(--text-body-lg)',
+          { lineHeight: 'var(--leading-body-lg)', fontWeight: '400' }
+        ],
         'body-md': [
           'var(--text-body-md)',
           { lineHeight: 'var(--leading-body-md)', fontWeight: '400' }
+        ],
+        'body-sm': [
+          'var(--text-body-sm)',
+          { lineHeight: 'var(--leading-body-sm)', fontWeight: '400' }
+        ],
+        'label-md': [
+          'var(--text-label-md)',
+          { lineHeight: 'var(--leading-label-md)', fontWeight: '400' }
+        ],
+        'label-sm': [
+          'var(--text-label-sm)',
+          { lineHeight: 'var(--leading-label-sm)', fontWeight: '400' }
         ],
 
         'caption': [

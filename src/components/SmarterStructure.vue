@@ -1,3 +1,68 @@
+<template>
+  <section class="feature-grid-section max-w-[1440px] mx-auto px-5 sm:px-20 md:px-10 lg:px-20 mb-32">
+    <h2 class="text-heading-lg xl:text-display-md text-black mb-10 text-center">Not just better returns.
+A smarter structure.</h2>
+    <div class="
+      grid
+      grid-cols-1
+      md:grid-cols-2
+      lg:grid-cols-3
+      gap-5
+      md:gap-7
+      lg:gap-8
+     mx-auto
+    ">
+
+      <div
+        v-for="(item, index) in features"
+        :key="item.id"
+        class="feature-card"
+      >
+        <div class="
+          flex flex-row items-start gap-5 p-5 
+          md:flex-col md:items-start md:gap-4
+          md:text-center
+          md:px-8 md:py-10
+          xl:py-[60px] xl:px-10
+          shadow-card
+          md:transition-shadow md:duration-300
+          rounded-md
+          h-full w-full
+        ">
+
+          <!-- Icon -->
+          <div class="flex-shrink-0 mt-1 md:mt-0 borde md:w-full md:flex md:justify-center">
+            <img
+              v-if="item.img"
+              :src="item.img"
+              :alt="item.title"
+              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16  object-contain"
+            />
+          </div>
+
+          <!-- Text -->
+          <div>
+            <h3 class="
+              font-bold text-black mb-2 xl:mb-2
+              text-heading-md xl:text-display-sm
+            ">
+              {{ item.title }}
+            </h3>
+            <p class="
+              text-black
+              text-body-md xl:text-body-lg
+            ">
+              {{ item.subtitle }}
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</template>
+
 <script setup>
 import { ref } from 'vue'
 
@@ -12,21 +77,21 @@ import SVG6 from '../assets/svg/2_6.svg'
 const features = [
   {
     id: 1,
-    title: 'Guaranteed Returns',
-    subtitle: 'Up to 6.9%+ p.a. Not market-linked. Not dependent on fund performance. Your rate is locked from the day you invest.',
+    title: 'Locked in for 10-15 years',
+    subtitle: 'Your future self will thank you for not touching this money. The rate stays the same, even if FD rates drop next year.',
     img: SVG1,
 
   },
   {
     id: 2,
-    title: 'Locked in for 10-15 years',
-    subtitle: 'Your future self will thank you for not touching this money. The rate stays the same, even if FD rates drop next year.',
+    title: 'Curated, Not Dumped',
+    subtitle: 'Every plan here cleared our review. We looked at 40+ GSPs and rejected more than we picked.', 
     img: SVG2,
   },
   {
     id: 3,
-    title: 'Curated, Not Dumped',
-    subtitle: 'Every plan here cleared our review. We looked at 40+ GSPs and rejected more than we picked.',
+    title: 'Guaranteed Returns',
+    subtitle: 'Up to 6.9%+ p.a. Not market-linked. Not dependent on fund performance. Your rate is locked from the day you invest.',
     img: SVG3,
   },
   {
@@ -49,72 +114,6 @@ const features = [
   }
 ]
 </script>
-
-<template>
-  <section class="feature-grid-section max-w-[1440px] mx-auto px-4 mb-28 lg:mb-28">
-    <h2 class="text-display-md text-black mb-10 text-center">Not just better returns.
-A smarter structure.</h2>
-    <div class="
-      grid
-      grid-cols-1
-      md:grid-cols-3
-      gap-5
-      md:gap-7
-      max-w-[1440px] mx-auto
-    ">
-
-      <div
-        v-for="(item, index) in features"
-        :key="item.id"
-        class="feature-card border"
-      >
-        <div class="
-          flex flex-row items-start gap-5 px-2 py-6
-          border-b border-dashed border-blue-100
-          md:flex-col md:items-start md:gap-4
-          md:border md:border-solid md:border-gray-100 md:rounded-md
-          md:px-7 md:py-8
-          shadow-card
-          md:transition-shadow md:duration-300
-          last:border-b-0
-          md:border-b
-          rounded-sm
-          h-full w-full
-        ">
-
-          <!-- Icon -->
-          <div class="flex-shrink-0 mt-1 md:mt-0">
-            <img
-              v-if="item.img"
-              :src="item.img"
-              :alt="item.title"
-              class="w-12 h-12 md:w-14 md:h-14 object-contain"
-            />
-          </div>
-
-          <!-- Text -->
-          <div>
-            <h3 class="
-              font-bold text-black mb-2 xl:mb-3
-              text-display-sm
-            ">
-              {{ item.title }}
-            </h3>
-            <p class="
-              text-black
-              text-body-sm lg:text-body-lg
-            ">
-              {{ item.subtitle }}
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-</template>
-
 <style scoped>
 /* Ensure last mobile item has no bottom border */
 @media (max-width: 767px) {
