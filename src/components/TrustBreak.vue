@@ -99,7 +99,7 @@ function resetTimer() {
 }
 
 onMounted(() => {
-//   startTimer()
+  startTimer()
 })
 
 onBeforeUnmount(() => {
