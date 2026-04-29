@@ -29,13 +29,13 @@
         <div
           v-for="item in features"
           :key="item.id"
-          class="w-1/2 flex-shrink-0 flex flex-col items-center text-center px-1 "
+          class="w-1/2 flex-shrink-0 flex flex-col items-center text-center px-1"
         >
           <div
-            class="rounded-md bg-primary-100 px-3 py-5 flex flex-col items-center w-full transition-all duration-300 text-black"
+            class="rounded-md bg-primary-100 px-3 py-5 flex flex-col items-center w-full transition-all duration-300 text-black h-full"
           >
-            <img :src="item.img" alt="Feature Icon" class="icon-wrap mb-4 w-12 h-12" />
-            <h3 class="font-bold text-gray-900 text-sm tracking-tighter mb-2">{{ item.title }}</h3>
+            <img :src="item.img" alt="Feature Icon" class="icon-wrap mb-3 w-10 h-10" />
+            <h3 class="font-bold text-gray-900 text-sm tracking-tighter h-8 mb-2">{{ item.title }}</h3>
             <p class="text-xs">{{ item.subtitle }}</p>
           </div>
         </div>
