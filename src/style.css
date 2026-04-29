@@ -3,14 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* =========================================
-   MOBILE TYPOGRAPHY TOKENS (FIGMA → SYSTEM)
-   Font Family: Outfit
-   Strategy:
-   - Merge duplicate styles
-   - Group by semantic usage instead of raw px
-   - Keep your existing Tailwind token structure
-========================================= */
+
 
 :root {
   --text-display-lg: 44px;
