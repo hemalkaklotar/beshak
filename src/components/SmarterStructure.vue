@@ -18,45 +18,7 @@ A smarter structure.</h2>
         :key="item.id"
         class="feature-card"
       >
-        <div class="
-          flex flex-row items-start gap-5 p-5 
-          md:flex-col md:items-start md:gap-4
-          md:text-center
-          md:px-8 md:py-10
-          xl:py-[60px] xl:px-10
-          shadow-card
-          md:transition-shadow md:duration-300
-          rounded-md
-          h-full w-full
-        ">
-
-          <!-- Icon -->
-          <div class="flex-shrink-0 mt-1 md:mt-0 borde md:w-full md:flex md:justify-center">
-            <img
-              v-if="item.img"
-              :src="item.img"
-              :alt="item.title"
-              class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16  object-contain"
-            />
-          </div>
-
-          <!-- Text -->
-          <div>
-            <h3 class="
-              font-bold text-black mb-2 xl:mb-2
-              text-heading-md xl:text-display-sm
-            ">
-              {{ item.title }}
-            </h3>
-            <p class="
-              text-black
-              text-body-md xl:text-body-lg
-            ">
-              {{ item.subtitle }}
-            </p>
-          </div>
-
-        </div>
+        <Card :content="item" />
       </div>
 
     </div>
@@ -65,8 +27,7 @@ A smarter structure.</h2>
 
 <script setup>
 import { ref } from 'vue'
-
-// Replace these with your actual SVG imports
+import Card from './ui/Card.vue'
 import SVG1 from '../assets/svg/2_1.svg'
 import SVG2 from '../assets/svg/2_2.svg'
 import SVG3 from '../assets/svg/2_3.svg'
@@ -115,10 +76,4 @@ const features = [
 ]
 </script>
 <style scoped>
-/* Ensure last mobile item has no bottom border */
-@media (max-width: 767px) {
-  .feature-card:last-child .flex {
-    border-bottom: none;
-  }
-}
 </style>

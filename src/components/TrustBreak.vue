@@ -1,39 +1,50 @@
 <template>
-  <section class="px-5 sm:px-20 md:px-10 lg:px-20 pb-20 pt-10 md:pb-22 lg:pb-44 px-5 sm:px-20 md:px-10 lg:px-20">
+  <section class="
+  px-5 pb-20 pt-10 
+  sm:px-20
+  md:pb-22 lg:pb-32  md:px-10 
+  lg:px-20">
     <!-- Desktop -->
-    <div
-      class="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6 md:max-w-2xl lg:max-w-6xl mx-auto"
-    >
-      <div
-        v-for="item in features"
-        :key="item.id"
-        class="flex flex-col items-center text-center px-5 py-4"
-      >
-        <img :src="item.img" alt="Feature Icon" class="mb-6" />
-        <h3 class="font-bold text-gray-900 text-body-lg xl:whitespace-nowrap leading-snug mb-1 lg:h-12 xl:h-auto">
-          {{ item.title }}
-        </h3>
-        <p class="text-gray-500 text-body-sm leading-snug">
-          {{ item.subtitle }}
-        </p>
-      </div>
-    </div>
+   
+   <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-4 lg:max-w-7xl mx-auto">
+  <div
+    v-for="item in features"
+    :key="item.id"
+    class="
+      flex flex-col items-center text-center
+      px-5 md:py-8 lg:py-0
+      relative
 
+
+    lg:[&:not(:last-child)]:after:content-['']
+    lg:[&:not(:last-child)]:after:absolute
+    lg:[&:not(:last-child)]:after:top-4
+    lg:[&:not(:last-child)]:after:bottom-4
+    lg:[&:not(:last-child)]:after:right-0
+    lg:[&:not(:last-child)]:after:w-px
+    lg:[&:not(:last-child)]:after:bg-gray-200
+    "
+  >
+    <img :src="item.img" alt="Feature Icon" class="mb-4 w-10 h-10 object-contain shrink-0" />
+
+    <h3 class="font-bold text-gray-900 text-sm xl:text-base leading-snug mb-2 lg:min-h-12 xl:min-h-0 flex items-center justify-center">
+      {{ item.title }}
+    </h3>
+
+    <p class="text-gray-500 text-xs xl:text-sm font-normal leading-snug">
+      {{ item.subtitle }}
+    </p>
+  </div>
+</div>
     <!-- Mobile -->
     <div class="md:hidden relative overflow-hidden" ref="carouselRef">
-        <h2 class="text-heading-lg text-black text-center mb-5">Why trust Beshak?</h2>
-      <div
-        class="flex transition-transform duration-500 ease-in-out"
-        :style="{ transform: `translateX(-${current * 50}%)` }"
-      >
-        <div
-          v-for="item in features"
-          :key="item.id"
-          class="w-1/2 flex-shrink-0 flex flex-col items-center text-center px-1"
-        >
+      <h2 class="text-heading-lg text-black text-center mb-5">Why trust Beshak?</h2>
+      <div class="flex transition-transform duration-500 ease-in-out"
+        :style="{ transform: `translateX(-${current * 50}%)` }">
+        <div v-for="item in features" :key="item.id"
+          class="w-1/2 flex-shrink-0 flex flex-col items-center text-center px-1">
           <div
-            class="rounded-md bg-primary-100 px-3 py-5 flex flex-col items-center w-full transition-all duration-300 text-black h-full"
-          >
+            class="rounded-md bg-primary-100 px-3 py-5 flex flex-col items-center w-full transition-all duration-300 text-black h-full">
             <img :src="item.img" alt="Feature Icon" class="icon-wrap mb-3 w-10 h-10" />
             <h3 class="font-bold text-gray-900 text-sm tracking-tighter h-8 mb-2">{{ item.title }}</h3>
             <p class="text-xs">{{ item.subtitle }}</p>
@@ -42,17 +53,12 @@
       </div>
 
       <div class="flex justify-center gap-2 mt-4">
-        <button
-          v-for="index in totalPages"
-          :key="index"
-          @click="goToPage(index - 1)"
-          class="transition-all duration-300 rounded-full"
-          :class="[
+        <button v-for="index in totalPages" :key="index" @click="goToPage(index - 1)"
+          class="transition-all duration-300 rounded-full" :class="[
             current === (index - 1) * 2
               ? 'bg-primary-500 w-5 h-2'
               : 'bg-[#D3DBD3] w-5 h-2'
-          ]"
-        ></button>
+          ]"></button>
       </div>
     </div>
   </section>

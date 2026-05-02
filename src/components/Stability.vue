@@ -20,7 +20,7 @@ const stats = [
           <p class="text-primary-600 font-bold text-body-lg lg:text-heading-sm xl:text-heading-lg  mb-6">
             Assuming you're 30. Roughly 30% of your money should be in something stable.
           </p>
-          <p class=" text-black text-body-md sm:text-body-lg !font-normal lg:text-body-md xl:text-body-lg  mx-auto md:mx-0">
+          <p class=" text-black text-body-md lg:text-body-md xl:text-body-lg xl:max-w-2xl mx-auto md:mx-0">
             You're probably heavy on equity. Mutual funds, stocks, maybe some crypto. That's fine for growth.
             But your portfolio needs a stable base too. A general rule: invest a percentage equal to your age
             in low-risk instruments. Guaranteed Savings Plans fit that slot perfectly. Not instead of your SIPs.
@@ -38,7 +38,7 @@ const stats = [
       </div>
 
       <div class="rounded-xl lg:mt-[120px] xl:max-w-[1040px] ">
-        <div class="flex flex-col flex-col-reverse  lg:flex-row md:items-start  lg:justify-between lg:items-center md:gap-12 lg:gap-16 pb-20 lg:pb-0">
+        <div class="flex flex-col-reverse  lg:flex-row md:items-start  lg:justify-between lg:items-center md:gap-12 lg:gap-16 pb-20 lg:pb-0">
 
           <!-- Left: "Only 4" card + stats grid -->
           <div class="flex flex-col items-center gap-4 md:flex-shrink-0 xl:w-[380px] mx-auto">
